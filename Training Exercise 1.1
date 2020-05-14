@@ -1,0 +1,28 @@
+#1. subir las bases y darles nombre
+AGE<-read.table("D:/Econometrics_Coursera/AGE.txt",header=TRUE)
+EXPENDITURES<-read.table("D:/Econometrics_Coursera/EXPENDITURES.txt",header=TRUE)
+AGE
+EXPENDITURES
+
+#2. no sé para qué pero Eddy siempre lo ponía
+class(AGE)
+attach(AGE)
+class(EXPENDITURES)
+attach(EXPENDITURES)
+
+#3. datos descriptivos
+summary(AGE)
+summary(EXPENDITURES)
+
+#4. unir la base
+AGE<-runif(50,min=15,max=57)
+EXPENDITURES<-runif(50,min=89,max=109)
+LECTURE1<-cbind(AGE,EXPENDITURES)
+summary(LECTURE1)
+#5. histograma
+hist(AGE)
+hist(EXPENDITURES)
+
+#SCATTLERPLOT
+plot(AGE,EXPENDITURES,main="Scatterplot",xlab="AGE",ylab="EXPENDITURES",pch=19)
+lines(lowess(AGE,EXPENDITURES),col="blue")
